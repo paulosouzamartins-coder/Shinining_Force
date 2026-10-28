@@ -1,0 +1,124 @@
+### Ataque e defesa
+
+* **Retaliate** — quando é atingido corpo a corpo, causa dano de volta ao atacante.
+* **Shield** — reduz o dano recebido em X.
+* **Pierce** — ignora X pontos de Shield.
+* **Multi-target** — o ataque atinge vários inimigos/alvos.
+* **Area Attack** — ataque em uma área definida.
+* **Range** — pode atacar à distância.
+* **Melee** — ataque corpo a corpo.
+* **Target X** — pode escolher até X alvos para o ataque.
+* **Attack +X** — aumenta o dano do ataque.
+* **Disadvantage** — rola o ataque com desvantagem quando aplicável.
+* **Advantage** — rola o ataque com vantagem quando aplicável.
+
+### Estados negativos
+
+* **Poison** — aumenta em +1 todo dano recebido de ataques até ser removido.
+* **Wound** — sofre 1 de dano no início de cada turno até ser removido.
+* **Stun** — perde as ações do próximo turno.
+* **Disarm** — não pode realizar ataques.
+* **Immobilize** — não pode se mover.
+* **Muddle** — fica com desvantagem em seus ataques.
+* **Curse** — adiciona uma carta Curse ao deck de modificadores; ao sair, o ataque causa 0.
+* **Brittle** — o próximo dano recebido é dobrado.
+* **Bane** — precisa receber cura/efeito específico dentro do prazo ou morre.
+* **Impair** — reduz sua capacidade de realizar determinadas ações, dependendo da versão/efeito.
+
+### Estados positivos
+
+* **Strengthen** — vantagem nos ataques.
+* **Bless** — adiciona uma carta Bless ao deck; quando sair, dobra o dano.
+* **Regenerate** — recupera HP periodicamente.
+* **Invisible** — não pode ser escolhido como alvo de ataques/inimigos.
+* **Flying** — ignora obstáculos e certos terrenos ao se mover.
+* **Jump** — pode atravessar obstáculos durante o movimento.
+* **Teleport** — muda de posição sem fazer um movimento normal.
+* **Summon** — cria outra criatura no mapa.
+
+### Comportamentos especiais
+
+* **Heal** — recupera HP de si mesmo ou de outro aliado.
+* **Loot** — coleta dinheiro/tesouro ao entrar no espaço.
+* **Loot X** — coleta até X moedas/tesouros, conforme a regra.
+* **Push X** — empurra um alvo X espaços.
+* **Pull X** — puxa um alvo X espaços.
+* **Force Move** — movimenta uma criatura contra sua vontade.
+* **Spawn** — coloca uma nova criatura no mapa.
+* **Summon** — invoca uma unidade que passa a agir normalmente.
+* **Consume** — consome um elemento para ativar um efeito.
+* **Infuse** — gera/cria um elemento.
+* **Elemental Empowerment** — usa elementos para melhorar ataques ou habilidades.
+* **Persistent effect** — efeito permanece ativo durante vários turnos.
+* **Loss** — ação/efeito que pode ser usado apenas uma vez.
+* **End-of-turn effect** — acontece no final do turno.
+* **Start-of-turn effect** — acontece no início do turno.
+* **Death effect** — algo acontece quando a criatura morre.
+
+### Movimento especial
+
+* **Move through allies** — pode atravessar aliados.
+* **Move through enemies** — pode atravessar inimigos.
+* **Obstacle interaction** — pode destruir/criar/interagir com obstáculos.
+* **Trap interaction** — pode colocar, criar ou interagir com armadilhas.
+* **Hazard interaction** — interage com terrenos perigosos.
+* **Teleport movement** — ignora o caminho normal.
+* **Flying movement** — ignora obstáculos/terrenos durante o movimento.
+
+### Efeitos de cenário
+
+* **Create obstacle** — cria um obstáculo.
+* **Destroy obstacle** — destrói um obstáculo.
+* **Create trap** — coloca uma armadilha.
+* **Disarm trap** — remove uma armadilha.
+* **Hazardous terrain** — cria uma área que causa dano/efeito ao entrar.
+* **Difficult terrain** — aumenta o custo de movimento.
+* **Door interaction** — abre/fecha/interage com portas.
+
+### Regras mais específicas de inimigos
+
+* **Summon allies** — invoca outros monstros.
+* **Spawn** — gera inimigos em locais determinados.
+* **Elite behavior** — versão Elite possui estatísticas/ações diferentes.
+* **Boss ability** — chefes possuem ações especiais próprias.
+* **Scenario-specific ability** — habilidade exclusiva daquele cenário.
+* **Death trigger** — morrer ativa outro efeito.
+* **Bloodlust / special targeting** — comportamento de seleção de alvo específico.
+* **Focus** — determina qual personagem/inimigo será priorizado.
+* **Proximity behavior** — comportamento muda conforme distância/posição.
+* **Objective targeting** — pode atacar objetivos em vez dos personagens.
+
+### Um detalhe importante para o seu projeto
+
+Se você está pensando nisso para o seu **boardgame inspirado em Gloomhaven**, dá para reduzir tudo isso a um conjunto bem menor de **palavras-chave universais**.
+
+Por exemplo:
+
+> **Retaliar X:** quem atacar este inimigo corpo a corpo sofre X dano.
+> **Escudo X:** reduz todo dano recebido em X.
+> **Perfuração X:** ignora X Escudo.
+> **Veneno:** ataques contra o alvo causam +1 dano.
+> **Ferimento:** alvo sofre 1 dano no início do turno.
+> **Atordoar:** perde a próxima ação.
+> **Desarmar:** não pode atacar.
+> **Imobilizar:** não pode mover.
+> **Confundir:** ataques têm -X / desvantagem.
+> **Empurrar X:** move o alvo X casas para longe.
+> **Puxar X:** move o alvo X casas para perto.
+> **Cura X:** recupera X HP.
+> **Invocar:** cria um aliado.
+> **Saque:** coleta recursos ao entrar no espaço.
+> **Voador:** ignora obstáculos/terreno.
+> **Pular:** atravessa obstáculos.
+> **Teleportar:** muda diretamente de posição.
+> **Área:** afeta múltiplos espaços.
+> **Piercing X:** ignora X Escudo.
+> **Explosão:** afeta todos em uma área ao redor do alvo.
+> **Criar Armadilha:** coloca uma armadilha no mapa.
+> **Criar Obstáculo:** coloca um obstáculo.
+> **Explorar:** procura/ativa algo no cenário.
+> **Enfurecer:** recebe bônus quando está ferido ou sob determinada condição.
+> **Morrer:** ativa um efeito quando é derrotado.
+
+Essas já dão para criar **uma variedade enorme de inimigos sem precisar inventar uma regra nova para cada carta**.
+

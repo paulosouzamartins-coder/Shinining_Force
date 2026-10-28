@@ -1,0 +1,7 @@
+Sprites dos heróis na tela de seleção (um .gif por herói, nome em minúsculas):
+max.gif, tao.gif, lowe.gif, luke.gif, ken.gif, hans.gif, gort.gif, khris.gif, mae.gif, anri.gif,
+gong.gif, amon.gif, arthur.gif, diane.gif, balbaroy.gif, zylo.gif, pelle.gif, vankar.gif, earnest.gif,
+kokichi.gif, alef.gif, domingo.gif, torasu.gif, guntz.gif, musashi.gif, hanzou.gif, lyle.gif,
+bleu.gif, adam.gif, jogurt.gif
+Os sprites usados DENTRO da batalha ficam na subpasta battle/ (mesmos nomes).
+Sem o arquivo, o jogo mostra um peão colorido com a sigla do herói.

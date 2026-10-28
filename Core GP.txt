@@ -1,0 +1,614 @@
+Shining Force - Legacy of the Great Intention
+- Turn based RPG
+- Hex Grids
+- Units move by their move stats. 
+- Depending on location, can Attack, Sppell, Loot, Stay or Nothing. 
+- Turn order decided by Unity Agility + Random seed
+- Offensive magic do not friendly fire
+- Healing and Stat-enhancing magic to friendly units.
+- Atacks, spells give EXP.
+- Units with backgrounds.
+- Units have class, which defines a set of abilities for that unit and gives an idea of the spells and equipment they have access to. 
+- Once a unit reaches level 10, it can advance to a more capable class via an in-game mechanism called "promotion". A unit can be promoted at any level from 10 on up to the game's maximum unpromoted level, 20. Upon promotion the character's level resets to 1 and statistics are reduced by a fixed amount, although they begin higher if the character had been promoted at a higher level.
+
+- Battle goals for the players are fairly simple: kill all enemies, kill the enemies' leader, or (in some cases) advance to the town or landmark that the player's army is trying to reach. The enemy side wins when they manage to kill the player's leader, Max, or when the player chooses to escape the battle, either by casting Egress or (in some cases) by retreating to the town or landmark where the battle began. Even if the player army escapes or Max is killed, the player can recover allies and re-fight the same battle. Since the Force is allowed to maintain any experience and money that is obtained, regardless of the battle's outcome, Thus, there is no Game Over, and the player's army gets stronger even upon its defeat, although Max's death results in the player losing half of their money.
+
+Unlike most games in the Shining Force series, Shining Force also possesses an exploration mode that occurs outside of battle. This gameplay mode is essentially a Japanese-style traditional RPG game along the lines of Final Fantasy or Dragon Quest, although there are no labyrinths and few puzzles to solve. In this mode, the player's army is represented by Max, who is able to walk around, interact with the people and with the scenario, find treasure, buy equipment and items, outfit the army, and choose which of the army's other members will be used in battle.
+
+Plot
+The game opens in the Kingdom of Guardiana, in the land of Rune. The protagonist, Max, is sent on a mission to prevent Darksol, who commands the hordes of Runefaust, from opening the Shining Path and resurrecting Dark Dragon. Along the way, Max recruits a number of allies to join the Shining Force. Opposing the Shining Force are foes such as Kane and King Ramladu, who were both corrupted by Darksol. Eventually Max forges the legendary Chaos Breaker, and uses it to reach the Castle of the Ancients, where Darksol plans to resurrect Dark Dragon.
+
+In the game's final confrontation, a wounded Darksol sacrifices himself to release Dark Dragon. The Shining Force ultimately prevails, and Max seals away Dark Dragon using the Chaos Breaker. As the castle begins to crumble, Max teleports his allies to safety, while he stays behind. The other characters watch as the castle sinks back into the water, and Max is presumed dead. However, after the credits, it shows Max in a different land.
+
+
+
+Locations
+Battle Guide map of Rune
+
+
+The continent in which the game takes place is known as Rune.
+
+Map of Rune
+Guardiana
+Gate of the Ancients Guardiana
+Alterone
+Rindo
+Shade Abbey
+Manarina
+Bustoke
+Pao
+Uranbatol
+Waral
+Rudo
+Dragonia
+Prompt
+Tower of the Ancients
+Runefaust Gate
+Runefaust
+Unmarked Locations
+Gong's Hut (East of Gate of the Ancients)
+Ring Reef (South of Waral)
+Shining Path (Within Ring Reef)
+Metapha (Within Prompt)
+East Gate of the Ancients Runefaust (West of Runefaust)
+Castle of the Ancients (Ocean, between both Gates of the Ancients)
+
+
+Characters
+
+Main Members;
+
+Max
+Lowe
+Tao
+Lug (Luke)
+Ken
+Hans
+
+Alef
+Anri
+Gort
+Mae
+Diane
+
+Bleu
+
+Earnest
+Khris
+Pelle
+Tao
+Torasu
+Adam
+Zylo
+
+Amon
+Balbaroy
+
+Unlockable members;
+
+Arthur
+Domingo
+Gong
+
+Guntz
+Hanzou
+Kokichi
+Lyle
+Musashi
+Vankar
+Jogurt
+
+
+
+The general Shining Force characters are divided between "Frontline" and "support".
+
+Frontline
+Knight/Paladins (KNTE/PLDN)
+
+There are 8 "Knight" or "lance/spear" characters within the game, the bulk of which consists of 6 Centaurs, the "Knight" characters. The game will often prompt the player to using 2-4 of these characters and generally. Knights, regardless of design, serve on the frontline and are often the first members of the Force to meet the enemy head-on, allowing them to gain the ground over most battles. They lack endurance and can fall quickly in battle, temptation is also to push them too far ahead of the other Force members, leaving them vulnerable to the enemy and can fall victim to the games few ambush battles.
+
+Centaur Knights are the main focus of the Shining Force and the player can acquire a total of 6 of them. Due to their movement speed and range, they are able to get into the fray first and combat any foe. However, they do not like rough terrain and during certain mid-late game battles, may be replaced with alternatives. The Centaurs "core" battle is the plains battles in Chapter 4, at this point a player will have 5 of the 6 centaurs, where all 5 have potential to dominate their enemies over all other classes. After this battle they become less useful until the last chapter of the game, having only a few potential battles where they excel.
+
+The Centaur Knights make use of spears and lances, with lances usually ending up stronger then spears. Spears, however, provide the knights with a little attack range and this combined with their movement range, is why they often can excel over all other frontline fighters.
+
+Ken; the games starter Knight, he is best paired up with Mae until replacement with stronger knights. As such he is a low tier knight/paladin.
+Mae; a low-mid tier Knight/paladin, Mae is able to compete with later knights and works best coupled with another knight.
+Pelle; a low tier knight/paladin, he quickly falls behind the other centaurs. Best in class for playthroughs with zero grinding.
+Vankar; a mid tier Knight/paladin, Vankar is "average" compared to other knights to the point where he lacks any stand out quality and is often not much better then Mae at the point of his recruitment.
+Earnest; a mid-top tier knight/paladin, Earnest is overall the second strongest knight.
+Arthur; low-top tier knight, starts off weak and ends up the strongest Paladin.
+
+Warrior/Gladiators (WARR/GLDT)
+The Dwarves Luke and Gort serve as the Forces "Tank" members. They are slower then the Centaurs but handle rough terrain better, making some outdoor battles fall in their favour mid-late game. 
+Since they can use Axes, they tend to deal heavier damage in the long run then the Knights and work best when both Luke and Gort are together on the field. 
+Their higher defense means they can often take on boss characters quite well, taking a few hits more then most Force members before falling.
+
+Luke is a low-mid tier Warrior/gladiator and due to his stats is able to hang on as a standard fighter longer than most of the start Force members.
+Gort is a mid-high tier warrior/gladiator. He hangs on much longer than Luke does and is able to be useful for longer than Luke as a result.
+
+
+Birdmen (BDMN/BDBT)
+Birdmen are the Forces first "flyers". While weak against range characters they do not fear any effects of the terrain hindering their progress. As a result, however, they are quite weak and fall quickly if left unsupported. Their most notable battles they excel at are the battle against the Laser Eye in Chapter 3, and the Sea battles in Chapter 5. In the very last battle against Dark Dragon, they can also make use of their flying ability to gang up on Dark Dragon himself, who will take up much of the battlefield with his body.
+
+Due to their weakness, they can easily be replaced by alternative "flyers" mid-late game. They can also be left out of a battle entirely even for patient Players as they never get as strong as some of the ground fighters. They are almost useless in the last few battles due to the layout of the battlefield.
+
+Balbaroy; a mid tier birdman.
+Amon; a low-mid tier birdwoman at best
+Misc.
+The game provides a number of alternative characters that can replace any of these 3 groups.
+
+Max is in every battle and serves as an all-round fighter who can alternative between the centaurs interception style of fighting, or the Warrior/Gladiators "tank" style of fighting, though never excels at either as well. He is the only member who can use the Force Sword, his class is Swordsman/Hero (SDMN/HERO) and is unique to himself.
+Guntz and Kokichi act as alternatives during the later game to the standard Centaur Knight members. They will carry the Shining Force in battles where centaurs struggle with due to the terrain movement limitations. Guntz as a Steam Knight/Steam Baron (STKT/STBN) acts as the Knights "tank" and can take a beating, though sacrifices the Centaurs movement in the process. Kokichi meanwhile is significantly weaker then any other knight in terms of his character class, but can easily excel in certain situations due to his ability to fly. He can easily replace either birdman, fulfilling their role and is a Wing Knight/ (WGKT/).
+Bleu acts as an alternative to the Birdmen. However, while stronger both in strength and defense, lacks their speed. He is also one of the last few members to join, joining Chapter 6 and is significantly much weaker then most of the Force at this point.
+Zylo makes for a good alternative fighter in certain terrain, essentially replacing the Centaur Knights for those few battles. He is able to excel in most of the battles within the game itself, thus ends up being one of the core members, even for player who choose not to unlock very member of the Force within the game.
+Adam is a replacement for the Warrior/Gladiator characters, and is the second to last character to join, however, leaving him significantly weaker then all other members of the Force at this point. His movement range is small, making him slow at moving. Since there are other fighters within the Force, players can bench him for them, though he is a strong character with training. His class is Robot/Cyborg (RBT/CYBG)
+Musashi is one of the strongest fighters on the force, thus is worth unlocking for both speed and patient players. He essentially is an alternative to the warrior/gladiators and can easily carry the player into late game. He lacks the movement range of other frontline fighters, however. His class is Samurai (SMR) and does not require promotion.
+Hanzou is Musash's opposite in terms of fighting style, he is more set up as an alternative to the centaurs and has a few useful spells to boast. His class is Ninja (NINJ) and does not require promotion.
+Support
+
+Archers/Snipers(ACHR/SNIP)
+Archers act as support, firing over the heads of all front line fighters. For this reason, they also do not care much if their movement speed is reduced either. They cannot fire close range and this proves their biggest weakness, though have the range needed to pick off air-based foes. Overall, they do average damage late game at the best and can be ignored altogether as they they tend to be reduced to picking off the weaker foes the Frontline fighters leave behind.
+Hans; acts as the early-game archer and is replaced in Chapter 3 with Diane.
+Diane; Is Hans' replacement and carries the players Force until Lyle joins, however, is not significantly stronger then Hans and often relies on Hans for support.
+
+Mages/Wizards (MAGE/WIZ)
+The spellcasters are useful throughout the game and most of the Forces teams will have a place for at least 1 of them. They act as front line support much better late game then the Archers at times, though become useless once their mana poll runs dry, making the vulnerable almost completely. Like the archers, they do not take damage very well and it takes only a few hits from their foes to knock them down.
+
+The mages also have a number of supporting spells, but at times their offensive spells will be the main focus of their battles.
+
+Tao; the low-tier mage, her strongest spell is Blaze lvl.4, which after mid-game becomes less relevant. However, she plays a pivotal role for the speedrun.
+Anri; a mid-tier mage, whose top spell is Freeze lvl.4 and also learns Bolt levels, giving her the range Tao lacks (2-3 with an area covering the shape of a diamond with a radius of 3, meaning up to 13 enemies hit). Also very important to the speedrun.
+Alef is the high-tier mage, with Bolt lvl.4. Has the most potential damage of all 3 mages.
+
+Priest/Vicars (PRST/VICR)
+Like the mages, the healers are useful throughout the game, particularly if training weaker members. In many battles, they can be the difference between victory and failure, making taking at least one healer onto the battlefield essential for completing the game. Early game, they can also fight on the front line, though never excel as well as the frontline fighters at this.
+
+Like the mages, they have supporting spells.
+
+Lowe; the low-tier Priest, he excels until the other Healers on the Shining Force learn Aura, of which they will quickly leave him behind (This can be mitigated with the White Ring, which casts Aura lv.1 when used, but care must be given to keep it in good repair).
+Khris, the mid-tier priest, she has the best overall healer, learning Heal lvl 4 like Lowe, but learns Aura lvl.1, allowing her to gain XP late game fast enough to keep up with Torasu.
+Torasu, the top tier healer, he learns the full lvl.4 Aura spell, but has a weaker lvl Heal spell as a result.
+
+
+==== Chapter 1
+
+Guardiana:
+- Advance Story (Talk to the King)
+- Recruit Gong
+- Talk to Gort
+- Item Shop
+- Weapon Shop
+- NPC
+- NPC
+- NPC
+
+Battle 1
+Location: Gate of the Ancients
+
+Win Condition: Defeat Rune Knight
+
+Enemies:
+
+Goblin x5
+Dark Dwarf x2
+Rune Knight x1
+
+
+Battle 2
+Location: Greater Guardiana/Alterone Region
+
+Win Condition: Defeat all enemies
+
+Enemies:
+
+Goblin x5
+Dark Dwarf x3
+Rune Knight x2
+Battle 3
+Location: Greater Guardiana/Alterone Region
+
+Win Condition: Defeat all enemies OR Reach Alterone
+
+Enemies:
+
+Dark Dwarf x5
+Rune Knight x5
+Giant Bat x5
+Battle 4
+Location: Alterone
+
+Win Condition: Defeat all enemies
+
+Enemies:
+
+Dark Dwarf x4
+Rune Knight x4
+Giant Bat x4
+Sniper x2
+Dark Mage x1
+Battle 5
+Location: Greater Rindo/Manarina Region
+
+Win Condition: Defeat all enemies
+
+Enemies:
+
+Dark Dwarf x3
+Giant Bat x4
+Sniper x2
+Dark Mage x3
+Zombie x4
+Battle 6
+Location: The Cavern of Darkness
+
+Win Condition: Defeat Skeleton
+
+Enemies:
+
+Giant Bat x5
+Dark Mage x4
+Zombie x3
+Skeleton x1
+Battle 7
+Location: Rindo Circus Tent
+
+Win Condition: Defeat Marionette
+
+Enemies:
+
+Giant Bat x3
+Mannequin x3
+Evil Puppet x3
+Dire Clown x2
+Marionette
+Battle 8
+Location: Shade Abbey
+
+Win Condition: Defeat Ghoul
+
+Enemies:
+
+Zombie x6
+Skeleton x3
+Ghoul x1
+Battle 9
+Location: Bustoke Quarry
+
+Win Condition: Defeat Master Mage
+
+Enemies:
+
+Dark Mage x2
+Skeleton x6
+Dark Elf x2
+Dark Priest x4
+Lizardman x1
+Master Mage x1
+Battle 10
+Location: Greater Bustoke Region
+
+Win Condition: Defeat all enemies
+
+Enemies:
+
+Skeleton x5
+Dark Elf x2
+Dark Priest x2
+Lizardman x2
+Pegasus Knight x4
+Battle 11
+Location: Pao Bridge
+
+Win Condition: Defeat all enemies
+
+Enemies:
+
+Dark Elf x3
+Dark Priest x2
+Lizardman x5
+Pegasus Knight x3
+Silver Knight x2
+Laser Eye x1
+Battle 12
+Location: Pao Prairie
+
+Win Condition: Defeat Elliot
+
+Enemies:
+
+Dark Priest x3
+Lizardman x5
+Pegasus Knight x4
+Silver Knight x4
+Artillery x1
+Elliott
+Battle 13
+Location: Uranbatol Fortress
+
+Win Condition: Defeat all Enemies OR Enter Uranbatol
+
+Enemies:
+
+Dark Priest x3
+Pegasus Knight x3
+Silver Knight x6
+Artillery x1
+Hellhound x2
+Battle 14
+Location: Uranbatol
+
+Win Condition: Defeat Balbazak
+
+Enemies:
+
+Dark Priest x1
+Evil Puppet x1
+Silver Knight x2
+Artillery x3
+Hellhound x2
+Seabat x5
+Balbazak
+Battle 15
+Location: Ship at Sea
+
+Win Condition: Defeat all enemies
+
+Enemies:
+
+Pegasus Knight x3
+Seabat x4
+Conch x3
+Shellfish x2
+Battle 16
+Location: Blue Chamber
+
+Win Condition: Defeat Master Mage
+
+Enemies:
+
+Hellhound x5
+Seabat x4
+Skeleton v2 x5
+Worm x3
+Master Mage x1
+Battle 17
+Location: Ship at Sea
+
+Win Condition: Defeat all enemies
+
+Enemies:
+
+Pegasus Knight x2
+Seabat x5
+Conch x6
+Shellfish x4
+Gargoyle x1
+Battle 18
+Location: Greater Rudo/Dragonia Region
+
+Win Condition: Defeat Durahan
+
+Enemies:
+
+Master Mage x4
+Artillery x5
+Worm x3
+High Priest x1
+Golem x5
+Durahan x1
+Battle 19
+Location: Dragonia
+
+Win Condition: Defeat Kane
+
+Enemies:
+
+Master Mage x3
+Gargoyle x3
+High Priest x2
+Golem x4
+Durahan x2
+Kane
+Note: Kane is mistranslated to Cain in the battle
+
+Battle 20
+Location: Greater Rudo/Dragonia Region
+
+Win Condition: Defeat all enemies
+
+Enemies:
+
+Master Mage x4
+Gargoyle x3
+High Priest x2
+Golem x4
+Bowrider x2
+Belial x3
+Battle 21
+Location: Demon Castle
+
+Win Condition: Defeat Mishaela
+
+Enemies:
+
+Master Mage x4
+Gargoyle x3
+Durahan x2
+High Priest x1
+Bowrider x3
+Belial x3
+Mishaela
+Battle 22
+Location: Greater Prompt Region
+
+Win Condition: Defeat all enemies
+
+Enemies:
+
+Durahan x4
+Belial x2
+Jet x2
+Torch Eye x2
+Wyvern x2
+Minotaur x1
+Battle 23
+Location: Tower of the Ancients
+
+Win Condition: Defeat Demon Master
+
+Enemies:
+
+Jet x3
+Torch Eye x3
+Wyvern x2
+Ice Worm x5
+Steel Claw x4
+Demon Master x1
+Battle 24
+Location: Metapha
+
+Win Condition: Defeat [[[Chaos (Shining Force I)|Chaos]]
+
+Enemies:
+
+Jet x4
+Torch Eye x4
+Minotaur x2
+Ice Worm x4
+Demon Master x3
+Chaos
+Battle 25
+Location: Greater Prompt Region
+
+Win Condition: Defeat all enemies
+
+Enemies:
+
+High Priest x1
+Minotaur x3
+Demon Master x2
+Morseman x3
+Cerberus x4
+Armed Skeleton x4
+Battle 26
+Location: Runefaust Castle
+
+Win Condition: Defeat all enemies
+
+Enemies:
+
+High Priest x2
+Horseman x3
+Cerberus x3
+Armed Skeleton x3
+Chimaera x5
+Blue Dragon x3
+Battle 27
+Location: Runefaust Castle
+
+Win Condition: Defeat Ramladu
+
+Enemies:
+
+Torch Eye x6
+Steel Claw x6
+Ramladu
+Battle 28
+Location: Castle of the Ancients
+
+Win Condition: Defeat all three Colossus
+
+Enemies:
+
+Jet x3
+Horseman x2
+Armed Skeleton x3
+Chimaera x6
+Blue Dragon x3
+Colossus x3
+Battle 29
+Location: Castle of the Ancients
+
+Win Condition: Defeat Darksol
+
+Enemies:
+
+Torch Eye x8
+Steel Claw x5
+High Priest x2
+Blue Dragon x2
+Darksol
+Battle 30
+Location: Castle of the Ancients
+
+Win Condition: Defeat Dark Dragon
+
+Enemies:
+
+Armed Skeleton x2 (respawn once per turn)
+Dark Dragon x3
+Note: Armed Skeletons will not respawn if a character stands on their spawning tiles
+
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+5
+5
+5
+5
+5
+5
+6
+6
+7
+7
+7
+7
+9

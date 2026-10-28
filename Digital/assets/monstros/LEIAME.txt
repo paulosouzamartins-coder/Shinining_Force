@@ -1,0 +1,6 @@
+Sprites dos monstros (.gif), nome do monstro em minúsculas com "_" no lugar de espaços:
+goblin.gif, dark_dwarf.gif, rune_knight.gif, giant_bat.gif, sniper.gif, dark_mage_a.gif, zombie.gif, skeleton_a.gif ...
+Os sufixos (A), (B), (C) viram _a, _b, _c. Exemplos: master_mage_b.gif, durahan_c.gif, high_priest_a.gif.
+"Dark Dragon (left & right)" vira dark_dragon_leftright.gif e "Dark Dragon (middle)" vira dark_dragon_middle.gif.
+Alternativa: assets/inimigo_1.gif, inimigo_2.gif ... (1 por grupo de monstros da catacumba, na ordem em que aparecem).
+Sem o arquivo, o jogo mostra um peão colorido com a sigla do monstro.

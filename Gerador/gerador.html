@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>CardMaker - Gerador de Cartas</title>
+    <!-- Biblioteca para exportar a div como imagem PNG -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+@font-face {
+    font-family: 'MonsterFont'; /* Esse é o apelido que você vai usar nas classes */
+    src: url('MONSTER OF FANTASY.otf') format('opentype');
+}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            background: #2d2d2d;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        select, button {
+            padding: 8px 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* --- PALCO DA CARTA --- */
+        #card-container {
+            position: relative;
+            width: 750px;
+            height: 1050px;
+            background-image: url('Background.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+
+        /* Área da Arte do Monstro */
+        .monster-art {
+            position: absolute;
+            top: 90px;       /* Ajuste conforme o seu template */
+            left: 22px;     /* Ajuste conforme o seu template */
+            width: 710px;    /* Largura fixa da área */
+            height: 570px;   /* Altura fixa da área */
+            object-fit: cover; /* Cobre o espaço sem distorcer as proporções */
+            z-index: 1;
+        }
+		
+
+        /* Nome do Monstro */
+        .card-name {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 48px;
+            font-weight: bold;
+            color: #2c2c2c;
+            text-transform: uppercase;
+            z-index: 3;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.7);
+			font-family: 'MonsterFont', sans-serif;
+        }
+
+        /* Estilo base para os campos numéricos */
+        .stat-value {
+            position: absolute;
+            font-size: 60px;
+            font-weight: bold;
+            color: #ffffff;
+            z-index: 3;
+            text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
+            text-align: center;
+            width: 40px;
+			font-family: 'MonsterFont', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <label for="monsterSelect"><strong>Escolha o Monstro:</strong></label>
+        <select id="monsterSelect" onchange="updateCard()">
+            <!-- Preenchido via JavaScript -->
+        </select>
+        <button onclick="exportCard()">Baixar</button>
+    </div>
+
+    <!-- CARTA -->
+    <div id="card-container">
+        <img id="monsterImage" class="monster-art" src="" alt="Arte do Monstro" onerror="this.src='';">
+        <div id="lblName" class="card-name">Nome</div>
+
+        <div id="lblHP" class="stat-value" style="top: 705px; left: 160px;">0</div>
+        <div id="lblAT" class="stat-value" style="top: 705px; left: 400px;">0</div>
+        <div id="lblDF" class="stat-value" style="top: 705px; left: 625px;">0</div>
+        <div id="lblAG" class="stat-value" style="top: 890px; left: 187px;">0</div>
+        <div id="lblMV" class="stat-value" style="top: 890px; left: 530px;">0</div>
+    </div>
+
+<script>
+    const monstersData = [
+        { "Monster": "Dark Dwarf", "Episode": 1, "Threat LV": 1, "HP": 5, "MP": 0, "AT": 1, "DF": 1, "AG": 5, "MV": 1, "Spells & Special Attacks": "", "Items": "Hand Axe", "Gold": 0, "Race": "Dwarf", "Faction": "Runefaust Army", "Deck": "Begginer Melee Deck 01" },
+        { "Monster": "Goblin", "Episode": 1, "Threat LV": 0, "HP": 5, "MP": 0, "AT": 0, "DF": 0, "AG": 5, "MV": 2, "Spells & Special Attacks": "", "Items": "Short Sword", "Gold": 0, "Race": "Goblinoide", "Faction": "Runefaust Army", "Deck": "Begginer Melee Deck 01" },
+        { "Monster": "Rune Knight", "Episode": 1, "Threat LV": 1, "HP": 6, "MP": 0, "AT": 2, "DF": 1, "AG": 7, "MV": 3, "Spells & Special Attacks": "", "Items": "Bronze Lance", "Gold": 0, "Race": "Centaur", "Faction": "Runefaust Army", "Deck": "Begginer Centaur Deck 01" },
+        { "Monster": "Giant Bat", "Episode": 1, "Threat LV": 3, "HP": 6, "MP": 0, "AT": 1, "DF": 1, "AG": 9, "MV": 3, "Spells & Special Attacks": "Sleep", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Sniper", "Episode": 1, "Threat LV": 4, "HP": 5, "MP": 0, "AT": 0, "DF": 0, "AG": 7, "MV": 2, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Dark Mage (A)", "Episode": 1, "Threat LV": 4, "HP": 5, "MP": 9, "AT": 1, "DF": 1, "AG": 9, "MV": 2, "Spells & Special Attacks": "Blaze 2", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Zombie", "Episode": 2, "Threat LV": 5, "HP": 6, "MP": 0, "AT": 2, "DF": 1, "AG": 7, "MV": 2, "Spells & Special Attacks": "Poison", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Skeleton (A)", "Episode": 2, "Threat LV": 6, "HP": 6, "MP": 0, "AT": 2, "DF": 2, "AG": 7, "MV": 2, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Evil Puppet (A)", "Episode": 2, "Threat LV": 7, "HP": 6, "MP": 5, "AT": 1, "DF": 1, "AG": 7, "MV": 2, "Spells & Special Attacks": "Freeze 1, Ominous Incantation", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Dire Clown", "Episode": 2, "Threat LV": 7, "HP": 6, "MP": 0, "AT": 2, "DF": 1, "AG": 7, "MV": 2, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Mannequin", "Episode": 2, "Threat LV": 7, "HP": 7, "MP": 0, "AT": 2, "DF": 1, "AG": 8, "MV": 2, "Spells & Special Attacks": "Poison", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Marionette", "Episode": 2, "Threat LV": 7, "HP": 19, "MP": "Infinite", "AT": 3, "DF": 1, "AG": 13, "MV": 2, "Spells & Special Attacks": "Freeze 3", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Ghoul", "Episode": 2, "Threat LV": 8, "HP": 12, "MP": 0, "AT": 2, "DF": 1, "AG": 9, "MV": 2, "Spells & Special Attacks": "Sleep", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Dark Priest", "Episode": 3, "Threat LV": 9, "HP": 7, "MP": 8, "AT": 2, "DF": 1, "AG": 10, "MV": 2, "Spells & Special Attacks": "Heal 1", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Dark Elf", "Episode": 3, "Threat LV": 9, "HP": 7, "MP": 0, "AT": 3, "DF": 1, "AG": 10, "MV": 2, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Dark Mage (B)", "Episode": 3, "Threat LV": 9, "HP": 6, "MP": 9, "AT": 2, "DF": 1, "AG": 12, "MV": 2, "Spells & Special Attacks": "Blaze 2", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Lizardman", "Episode": 3, "Threat LV": 9, "HP": 9, "MP": 0, "AT": 2, "DF": 1, "AG": 12, "MV": 2, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Master Mage (A)", "Episode": 3, "Threat LV": 9, "HP": 10, "MP": 11, "AT": 3, "DF": 1, "AG": 26, "MV": 2, "Spells & Special Attacks": "Freeze 2, Sleep", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Skeleton (B)", "Episode": 3, "Threat LV": 10, "HP": 6, "MP": 0, "AT": 3, "DF": 2, "AG": 7, "MV": 2, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Pegasus Knight", "Episode": 3, "Threat LV": 10, "HP": 8, "MP": 0, "AT": 2, "DF": 2, "AG": 12, "MV": 3, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Laser Eye", "Episode": 3, "Threat LV": 11, "HP": 15, "MP": 0, "AT": 1, "DF": 2, "AG": 27, "MV": 0, "Spells & Special Attacks": "Laser Blast", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Silver Knight", "Episode": 3, "Threat LV": 11, "HP": 7, "MP": 0, "AT": 2, "DF": 1, "AG": 11, "MV": 3, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Artillery", "Episode": 4, "Threat LV": 12, "HP": 6, "MP": 0, "AT": 2, "DF": 2, "AG": 14, "MV": 1, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Elliott", "Episode": 4, "Threat LV": 12, "HP": 29, "MP": 0, "AT": 3, "DF": 2, "AG": 16, "MV": 2, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Hellhound", "Episode": 4, "Threat LV": 13, "HP": 8, "MP": 0, "AT": 1, "DF": 1, "AG": 13, "MV": 3, "Spells & Special Attacks": "Fire Breath", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Evil Puppet (B)", "Episode": 4, "Threat LV": 14, "HP": 6, "MP": 5, "AT": 3, "DF": 1, "AG": 7, "MV": 2, "Spells & Special Attacks": "Heal 1, Ominous Incantation", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Balbazak", "Episode": 4, "Threat LV": 14, "HP": 31, "MP": 0, "AT": 3, "DF": 2, "AG": 20, "MV": 2, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Seabat", "Episode": 4, "Threat LV": 14, "HP": 10, "MP": 0, "AT": 2, "DF": 1, "AG": 14, "MV": 3, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Conch", "Episode": 5, "Threat LV": 15, "HP": 10, "MP": 0, "AT": 2, "DF": 2, "AG": 16, "MV": 2, "Spells & Special Attacks": "Poison", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Shellfish", "Episode": 5, "Threat LV": 15, "HP": 12, "MP": 0, "AT": 2, "DF": 2, "AG": 23, "MV": 2, "Spells & Special Attacks": "poison", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Worm", "Episode": 5, "Threat LV": 16, "HP": 7, "MP": 0, "AT": 2, "DF": 2, "AG": 16, "MV": 1, "Spells & Special Attacks": "Sleep", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Gargoyle", "Episode": 5, "Threat LV": 17, "HP": 8, "MP": 7, "AT": 3, "DF": 2, "AG": 20, "MV": 2, "Spells & Special Attacks": "Muddle 1, Sleep", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Golem", "Episode": 6, "Threat LV": 18, "HP": 7, "MP": 0, "AT": 3, "DF": 3, "AG": 16, "MV": 1, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "High Priest (A)", "Episode": 6, "Threat LV": 18, "HP": 9, "MP": 11, "AT": 1, "DF": 1, "AG": 13, "MV": 2, "Spells & Special Attacks": "Heal 4", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Durahan (A)", "Episode": 6, "Threat LV": 18, "HP": 10, "MP": 0, "AT": 4, "DF": 3, "AG": 13, "MV": 2, "Spells & Special Attacks": "Sleep", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Master Mage (B)", "Episode": 6, "Threat LV": 19, "HP": 10, "MP": 11, "AT": 1, "DF": 1, "AG": 26, "MV": 2, "Spells & Special Attacks": "Freeze 2, Sleep", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Kane", "Episode": 6, "Threat LV": 19, "HP": 33, "MP": 8, "AT": 7, "DF": 3, "AG": 29, "MV": 2, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Belial", "Episode": 6, "Threat LV": 20, "HP": 10, "MP": 12, "AT": 3, "DF": 2, "AG": 22, "MV": 2, "Spells & Special Attacks": "Bolt 1, Muddle 1, Demon Smile", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Bowrider", "Episode": 6, "Threat LV": 20, "HP": 8, "MP": 0, "AT": 4, "DF": 1, "AG": 14, "MV": 3, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Durahan (B)", "Episode": 6, "Threat LV": 21, "HP": 10, "MP": 0, "AT": 4, "DF": 3, "AG": 13, "MV": 2, "Spells & Special Attacks": "Sleep", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "High Priest (B)", "Episode": 6, "Threat LV": 21, "HP": 9, "MP": 11, "AT": 4, "DF": 1, "AG": 13, "MV": 2, "Spells & Special Attacks": "Heal 4", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Mishaela", "Episode": 6, "Threat LV": 21, "HP": 31, "MP": "Infinite", "AT": 4, "DF": 3, "AG": 35, "MV": 2, "Spells & Special Attacks": "Bolt 2", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Durahan (C)", "Episode": 7, "Threat LV": 22, "HP": 10, "MP": 0, "AT": 4, "DF": 3, "AG": 13, "MV": 2, "Spells & Special Attacks": "Sleep", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Torch Eye", "Episode": 7, "Threat LV": 22, "HP": 14, "MP": 0, "AT": 4, "DF": 3, "AG": 27, "MV": 2, "Spells & Special Attacks": "Laser (~20HP Fixed Damage)", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Minotaur", "Episode": 7, "Threat LV": 22, "HP": 16, "MP": 0, "AT": 5, "DF": 3, "AG": 31, "MV": 2, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Wyvern", "Episode": 7, "Threat LV": 22, "HP": 17, "MP": 0, "AT": 4, "DF": 3, "AG": 31, "MV": 3, "Spells & Special Attacks": "Fire Breath", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Jet", "Episode": 7, "Threat LV": 22, "HP": 14, "MP": 0, "AT": 5, "DF": 3, "AG": 33, "MV": 3, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Ice Worm", "Episode": 7, "Threat LV": 23, "HP": 15, "MP": 4, "AT": 4, "DF": 3, "AG": 26, "MV": 2, "Spells & Special Attacks": "Ice Breath, Sleep", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Chaos", "Episode": 7, "Threat LV": 24, "HP": 31, "MP": 0, "AT": 5, "DF": 4, "AG": 32, "MV": 2, "Spells & Special Attacks": "Laser", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Armed Skeleton", "Episode": 7, "Threat LV": 25, "HP": 20, "MP": 0, "AT": 6, "DF": 3, "AG": 32, "MV": 2, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Demon Master (A)", "Episode": 7, "Threat LV": 25, "HP": 13, "MP": 15, "AT": 4, "DF": 2, "AG": 45, "MV": 2, "Spells & Special Attacks": "Freeze 3", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Demon Master (B)", "Episode": 7, "Threat LV": 25, "HP": 13, "MP": 15, "AT": 5, "DF": 2, "AG": 50, "MV": 2, "Spells & Special Attacks": "Freeze 3", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Horseman", "Episode": 7, "Threat LV": 25, "HP": 11, "MP": 0, "AT": 5, "DF": 2, "AG": 17, "MV": 3, "Spells & Special Attacks": "", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Cerberus", "Episode": 7, "Threat LV": 25, "HP": 13, "MP": 0, "AT": 4, "DF": 3, "AG": 38, "MV": 3, "Spells & Special Attacks": "Fire breath", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Blue Dragon", "Episode": 8, "Threat LV": 26, "HP": 26, "MP": 0, "AT": 6, "DF": 3, "AG": 42, "MV": 2, "Spells & Special Attacks": "Ice breath", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "High Priest (C)", "Episode": 8, "Threat LV": 26, "HP": 9, "MP": 11, "AT": 4, "DF": 1, "AG": 13, "MV": 3, "Spells & Special Attacks": "Heal 4", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Steel Claw", "Episode": 8, "Threat LV": 27, "HP": 12, "MP": 0, "AT": 4, "DF": 3, "AG": 31, "MV": 2, "Spells & Special Attacks": "Laser", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Ramladu", "Episode": 8, "Threat LV": 27, "HP": 50, "MP": "Infinite", "AT": 9, "DF": 4, "AG": 49, "MV": 2, "Spells & Special Attacks": "Aura 3", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Colossus", "Episode": 8, "Threat LV": 28, "HP": 31, "MP": "Infinite", "AT": 5, "DF": 4, "AG": 37, "MV": 1, "Spells & Special Attacks": "Blaze, Freeze, or Bolt 3", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Chimera", "Episode": 8, "Threat LV": 28, "HP": 28, "MP": 0, "AT": 7, "DF": 3, "AG": 40, "MV": 2, "Spells & Special Attacks": "Fire Breath", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Darksol", "Episode": 8, "Threat LV": 29, "HP": 150, "MP": "Infinite", "AT": 4, "DF": 4, "AG": 54, "MV": 2, "Spells & Special Attacks": "Demon Blaze", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Dark Dragon (left & right)", "Episode": 8, "Threat LV": 30, "HP": 240, "MP": "Infinite", "AT": 7, "DF": 4, "AG": 60, "MV": 0, "Spells & Special Attacks": "Blaze 2, Freeze 2, Bolt 4", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" },
+        { "Monster": "Dark Dragon (middle)", "Episode": 8, "Threat LV": 30, "HP": 280, "MP": "Infinite", "AT": 7, "DF": 4, "AG": 60, "MV": 0, "Spells & Special Attacks": "Desoul 2, Demon Blaze", "Items": "", "Gold": "", "Race": "", "Faction": "", "Deck": "" }
+    ];
+
+    const selectElement = document.getElementById('monsterSelect');
+
+    function init() {
+        if (!monstersData || monstersData.length === 0) {
+            alert('A base de dados está vazia.');
+            return;
+        }
+
+        monstersData.forEach((monster, index) => {
+            let option = document.createElement('option');
+            option.value = index;
+            option.textContent = monster.Monster || `Monstro ${index + 1}`;
+            selectElement.appendChild(option);
+        });
+
+        updateCard();
+    }
+
+    function updateCard() {
+        const index = selectElement.value;
+        const data = monstersData[index];
+        if (!data) return;
+
+        let monsterName = data.Monster;
+
+        document.getElementById('lblName').textContent = monsterName || '';
+        document.getElementById('lblHP').textContent = data.HP ?? 0;
+        document.getElementById('lblAT').textContent = data.AT ?? 0;
+        document.getElementById('lblDF').textContent = data.DF ?? 0;
+        document.getElementById('lblAG').textContent = data.AG ?? 0;
+        document.getElementById('lblMV').textContent = data.MV ?? 0;
+
+        const imgPath = `imagens/${monsterName}.png`;
+        document.getElementById('monsterImage').src = imgPath;
+    }
+
+    function exportCard() {
+        const data = monstersData[selectElement.value];
+        if (!data) return;
+        let monsterName = data.Monster;
+
+        const cardElement = document.getElementById('card-container');
+        
+        html2canvas(cardElement, { 
+            scale: 2, 
+            useCORS: true, 
+            allowTaint: true 
+        }).then(canvas => {
+            const link = document.createElement('a');
+            link.download = `${monsterName}_card.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }).catch(err => {
+            console.error("Erro ao gerar imagem:", err);
+            alert("Erro ao exportar a imagem. Certifique-se de estar rodando o arquivo através de um servidor local (como a extensão Live Server do VS Code) para evitar bloqueios de segurança do navegador.");
+        });
+    }
+
+    init();
+</script>
+</body>
+</html>

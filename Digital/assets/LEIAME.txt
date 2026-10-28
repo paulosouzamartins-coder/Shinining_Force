@@ -1,0 +1,1 @@
+Terreno (opcional): chao.png e parede.png nesta pasta. Sem eles o jogo desenha o piso e as paredes em CSS.

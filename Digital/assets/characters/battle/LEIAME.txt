@@ -1,0 +1,3 @@
+Sprites dos heróis usados na batalha (tabuleiro, ordem de turno e painel do grupo), .gif com o mesmo nome da tela de seleção:
+battle/max.gif, battle/tao.gif, battle/lowe.gif ... (veja a lista em ../LEIAME.txt)
+Se um arquivo de batalha não existir, o jogo usa o sprite da tela de seleção (assets/characters/<nome>.gif); se este também faltar, mostra o peão colorido.

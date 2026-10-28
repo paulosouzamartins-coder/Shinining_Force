@@ -1,0 +1,2 @@
+monster image resolution: 710 x 570
+local: 22,72

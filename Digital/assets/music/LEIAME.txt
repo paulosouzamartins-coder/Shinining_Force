@@ -1,0 +1,2 @@
+selecao.(mp3|ogg|wav)  -> tela de seleção
+cenario1.(mp3|ogg|wav), cenario2... -> música de cada cenário (se faltar, toca batalha.(mp3|ogg|wav))
