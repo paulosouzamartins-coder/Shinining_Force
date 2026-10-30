@@ -1,0 +1,3 @@
+GIF do atacante exibido ao lado do baralho de modificadores: assets/battle/<nome da unidade>.gif
+Herois: chave minuscula (max.gif, lowe.gif...). Monstros: nome em minusculas com _ (dark_dwarf.gif, goblin.gif).
+Sem o arquivo, o espaco nao aparece.

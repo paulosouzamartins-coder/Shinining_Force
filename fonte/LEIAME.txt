@@ -1,2 +1,2 @@
-Fonte do jogo. tpl.html = template; monsters.json + ../cartas.xlsx -> build.py gera o index.html (python3 build.py, requer openpyxl; ajuste os caminhos se mover os arquivos).
-gen_cards.py esta desatualizado (nao tem Queimar/Magia): use o cartas.xlsx editado como fonte.
+Fonte do jogo. tpl.html = template; monsters.json + ../dados.xlsx -> build.py gera o index.html.
+Uso (na pasta fonte, com monsters.json, tpl.html e build.py juntos): python3 build.py ../dados.xlsx  (requer openpyxl; gera catacumba.html).

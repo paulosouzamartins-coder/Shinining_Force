@@ -1,0 +1,6 @@
+LOGO DA TELA INICIAL
+Coloque o logo em assets/logo.png (de preferência PNG com fundo transparente, ~1200 px de largura).
+Ele aparece grande no topo da tela inicial. Sem o arquivo, o jogo mostra o título em texto.
+
+MÚSICA DA TELA INICIAL (opcional)
+assets/music/titulo.mp3 (ou .ogg/.wav). Sem ele, a tela inicial toca a música da seleção (selecao).

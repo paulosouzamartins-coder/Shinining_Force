@@ -1,0 +1,3 @@
+Arte grande do herói (ficha de turno): fullart/<chave>.gif (ou .png). Ex.: max.gif, tao.gif, lowe.gif...
+O sprite de rosto da ficha vem de assets/characters/<chave>.gif.
+Buraco no mapa: assets/buraco.png (opcional; sem a imagem a casa fica preta).

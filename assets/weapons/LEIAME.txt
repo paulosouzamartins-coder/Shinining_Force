@@ -1,0 +1,2 @@
+Ícones das armas (aparecem no slot Arma da ficha em combate): <nome da arma em minúsculas, com _>.png (ou .gif).
+Ex.: short_sword.png, wooden_staff.png, elven_arrow.png, power_spear.png, sword_of_light.png. Sem a imagem, aparece um ícone genérico.
