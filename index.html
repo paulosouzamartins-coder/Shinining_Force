@@ -226,14 +226,25 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .cell.hl-heal { cursor: pointer; box-shadow: inset 0 0 0 2px var(--heal), inset 0 0 16px rgba(124,196,126,.6); animation: tgt 1s ease-in-out infinite; }
 .cell.active::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 2px var(--gold); pointer-events: none; }
 @keyframes tgt { 50% { filter: brightness(1.35); } }
-.tok { position: absolute; inset: 7%; z-index: 1; }
-.tok .av { width: 100%; height: 100%; }
-.av {
-  display: grid; place-items: center; overflow: hidden; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--c) 65%, #fff), var(--c) 55%, color-mix(in srgb, var(--c) 55%, #000));
-  border: 2px solid rgba(0,0,0,.5); box-shadow: 0 2px 5px rgba(0,0,0,.55); color: #14161a; font-family: var(--f-display); line-height: 1;
+.tok { 
+  position: absolute; 
+  inset: 0; 
+  display: grid; 
+  place-items: center; 
+  z-index: 1; 
 }
-.av img { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; display: block; }
+.tok .av { 
+  width: 52px; 
+  height: 54px; 
+  border-radius: 8px; /* Ajuste o arredondamento se preferir retangular ou arredondado */
+}
+.av img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; /* Mantém a proporção da imagem sem distorcer ou forçar preenchimento total */
+  image-rendering: pixelated; 
+  display: block; 
+}
 .av.gav { border-radius: 24%; }
 .tok .av b { font-weight: 400; font-size: 3.5cqw; }
 .tok.enemy .av { border-radius: 24%; }
